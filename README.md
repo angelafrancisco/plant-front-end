@@ -8,7 +8,7 @@ PlantPet - A web application for plant newbies, plant lovers and aspiring plant 
 
 Hosted via Heroku:
 
-<!-- link here -->
+https://plantpet.herokuapp.com/
 
 ## Back-End Repository
 https://github.com/angelafrancisco/plant-back-end

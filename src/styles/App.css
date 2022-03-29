@@ -1,0 +1,28 @@
+:root {
+    --link-color: #90B030;
+    --btn-solid-bg-color: #90B030;
+    --btn-solid-txt-color: #ffffff;
+    --btn-outline-bg-color: #ffffff;
+    --btn-outline-color: 1px solid #90B030;
+    --btn-outline-txt-color: #90B030;
+}
+.App {
+    padding: 20px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.nav-links-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+.nav-link {
+    text-decoration: none;
+    color: var(--link-color);
+    margin: 10px;
+    cursor: pointer;
+}
