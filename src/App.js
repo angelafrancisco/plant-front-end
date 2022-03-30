@@ -3,7 +3,7 @@ import Header from './components/header';
 import PlantTasks from './components/plantTasks';
 import PlantIndex from './components/plantIndex';
 import './styles/App.css';
-import './styles/plantIndex.css'
+import './styles/plantBody.css'
 
 
 function App() {
@@ -32,6 +32,7 @@ function App() {
     <div className="App">
       <Header></Header>
       <h1>Welcome to PlantPet!</h1>
+      {/* tasks will go here */}
       <PlantTasks></PlantTasks>
       {plants.map((plant) => {
         return <PlantIndex key={plant._id} plant={plant}></PlantIndex>

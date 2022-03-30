@@ -1,3 +1,11 @@
+/* LEFT ALIGNED */
+.section-header, .grid-container {
+    padding: 0 100px;
+}
+
+.section-header {
+    color: var(--header-color);
+}
 .task-btn-section {
     display: flex;
     padding:0 80px;
@@ -6,7 +14,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-    padding: 0 100px;
 }
 .plant-index-container {
     border: var(--outline-color);

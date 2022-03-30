@@ -1,12 +1,37 @@
+import { useState } from "react";
+
 const PlantIndex = (props) => {
+    const [showing, setShowing] = useState(false);
+    const toggleShowing = () => {
+        setShowing(!showing)
+    }
+    const [isValidState, setIsValidState] = useState({ valid: true, message: "" });
+    const [updatePlant, setUpdatePlant] = useState({
+        name: props.plant.name,
+        type: props.plant.type,
+        image: props.plant.image,
+        potSize: props.plant.potSize,
+        roomName: props.plant.roomName,
+        direction: props.plant.direction,
+        userNotes: props.plant.userNotes,
+        _id: props.plant._id
+    });
+    const handleInputChange = (e) => {
+        setUpdatePlant({
+            ...updatePlant,
+            [e.target.name]: e.target.value
+        })
+    }
+    const submitUpdatePlant = (e) => {
+        e.preventDefault();
+        props.updatePlant(props.plant._id, updatePlant);
+        setShowing(false);
+    }
     return (
         <>
-            <div className="task-btn-section">
-                <a href="#" className="solid-btn">Today</a>
-                <a href="#" className="outline-btn">Upcoming</a>
-            </div>
+            <h2 className="section-header">My Plants</h2>
             <div className="grid-container">
-                {/* plant index container should have props passed */}
+                {/* ternary for if plant exists show */}
                 <div className="plant-index-container">
                     {/* <img src={props.plant.image} alt="plant photo" className="plant-index-img" /> */}
                     <div className="plant-index-img" style={{ backgroundImage: `url(${props.plant.image})` }}></div>
@@ -18,10 +43,23 @@ const PlantIndex = (props) => {
                             <p className="plant-text">Pot Size: {props.plant.potSize}in</p>
                             <p className="plant-text">Notes: {props.plant.userNotes}</p>
                         </div>
-                        {/* submit button to complete task */}
-                        <div className="plant-task-btn">
-                            <button className="solid-btn submit" type="submit">Water!</button>
-                        </div>
+                        {/* modal opens to edit */}
+                        {showing ?
+                            <div className="edit-plant-form">
+                                <form onSubmit={submitUpdatePlant}>
+                                    {isValidState.valid ? null : <p className='form-error'>{isValidState.message}</p>}
+                                    Plant Name: <input onChange={handleInputChange} type="text" name="name" value={updatePlant.name} />
+                                    Plant Type: <input onChange={handleInputChange} type="text" name="type" value={updatePlant.type} />
+                                    Image: <input onChange={handleInputChange} type="text" name="image" value={updatePlant.image} />
+                                    Pot Size: <input onChange={handleInputChange} type="number" name="potSize" value={updatePlant.potSize} /> in.
+                                    Location: <input onChange={handleInputChange} type="text" name="roomName" value={updatePlant.roomName} />
+                                    Window Placement: <input onChange={handleInputChange} type="text" name="direction" value={updatePlant.direction} />
+                                    Notes: <input onChange={handleInputChange} type="text" name="userNotes" value={updatePlant.userNotes} />
+                                    <button type="submit" className="solid-btn">Update</button>
+                                </form>
+                            </div>
+                            : <button onClick={toggleShowing} className="outline-btn">Edit</button>}
+                        <button onClick={() => { props.deletePlant(props.plant._id) }} className="outline-btn">Delete</button>
                     </div>
                 </div>
             </div>
