@@ -11,9 +11,10 @@ const PlantNew = (props) => {
         type: "",
         image: "",
         potSize: "",
-        roomName: "",
+        roomName: "", // is an empty sufficient for a dropdown? same for direction
         direction: "",
-        userNotes: ""
+        userNotes: "",
+        task: { completed: false, waterSchedule: 7 }
     });
     const handleInputChange = (e) => {
         setNewPlant({
@@ -24,10 +25,10 @@ const PlantNew = (props) => {
     const submitNewPlant = (e) => {
         e.preventDefault()
         let validSubmission = true;
-        if (newPlant.name.length < 2) {
+        if (newPlant.type.length < 2) {
             setIsValidState({
                 valid: false,
-                message: "Name is required and must be longer than 2 characters!"
+                message: "Plant type is required. Use your best guess until plant API search is implemented!"
             })
             validSubmission = false;
         }
@@ -35,7 +36,13 @@ const PlantNew = (props) => {
             props.createNewPlant(newPlant)
             setNewPlant({
                 name: "",
-                type: ""
+                type: "",
+                image: "",
+                potSize: "",
+                roomName: "", // is an empty sufficient for a dropdown? same for direction
+                direction: "",
+                userNotes: "",
+                task: { completed: false, waterSchedule: 7 }
             })
             setIsValidState({
                 valid: true,
@@ -63,7 +70,7 @@ const PlantNew = (props) => {
                         <button type="submit" className="solid-btn">Add Plant!</button>
                     </form>
                 </div >
-                : <button onClick={toggleShowing} className="solid-btn">Create New Plant</button>}
+                : <button onClick={toggleShowing} className="solid-btn">Create New Plant!</button>}
         </>
     )
 }

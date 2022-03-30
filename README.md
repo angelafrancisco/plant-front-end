@@ -49,6 +49,16 @@ https://github.com/angelafrancisco/plant-back-end
 - RESTful API
 - User image upload via Cloudinary
 
+## Future Goals
+These are additions I wasn't able to get to within project timeframe, but want to implement in the future!
+
+- Model: Plant
+    -- petFriendly: { type: Boolean } (auto generated based on toxicity level?)
+    -- maintenance: { type: "High" | "Medium" | "Low" } (auto generated based on hardiness?)
+    -- waterSched: { type: Number } (auto generated? could be based off of drought/humidity resistant?)
+- API: It was difficult to find a public plant API that worked for my project. Hoping to expand on this later on.
+
+
 ## Credits
 
 - Favicon
