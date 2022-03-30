@@ -1,13 +1,18 @@
 :root {
     --link-color: #90B030;
-    --btn-solid-bg-color: #90B030;
-    --btn-solid-txt-color: #ffffff;
-    --btn-outline-bg-color: #ffffff;
-    --btn-outline-color: 1px solid #90B030;
-    --btn-outline-txt-color: #90B030;
+    --btn-radius: 10px;
+    --solid-bg-color: #90B030;
+    --solid-txt-color: #ffffff;
+    --outline-bg-color: #ffffff;
+    --outline-txt-color: #90B030;
+    --outline-color: 1px solid #90B030;
+    --img-radius: 50%;
 }
 .App {
     padding: 20px;
+}
+* {
+    margin: 0;
 }
 nav {
     display: flex;
@@ -20,7 +25,7 @@ nav {
     display: flex;
     justify-content: center;
 }
-.nav-link {
+a {
     text-decoration: none;
     color: var(--link-color);
     margin: 10px;
