@@ -29,7 +29,6 @@ const PlantIndex = (props) => {
     }
     return (
         <>
-            <h2 className="section-header">My Plants</h2>
             <div className="grid-container">
                 {/* ternary for if plant exists show */}
                 <div className="plant-index-container">
@@ -46,6 +45,7 @@ const PlantIndex = (props) => {
                         {/* modal opens to edit */}
                         {showing ?
                             <div className="edit-plant-form">
+                                <button onClick={toggleShowing} className="outline-btn">X</button>
                                 <form onSubmit={submitUpdatePlant}>
                                     {isValidState.valid ? null : <p className='form-error'>{isValidState.message}</p>}
                                     Plant Name: <input onChange={handleInputChange} type="text" name="name" value={updatePlant.name} />
