@@ -58,7 +58,7 @@ const PlantIndex = (props) => {
                             </form>
                         </div>
                         : <button onClick={toggleShowing} className="outline-btn">Edit</button>}
-                    <button onClick={() => { props.deletePlant(props.plant._id) }} className="outline-btn">Delete</button>
+                    <button onClick={() => props.deletePlant(props.plant._id)} className="outline-btn">Delete</button>
                 </div>
             </div>
         </>

@@ -1,21 +1,22 @@
 import { useState } from 'react';
 
 const PlantNew = (props) => {
+    const initialPlantObject = {
+        name: "",
+        type: "",
+        image: "",
+        potSize: "",
+        roomName: "",
+        direction: "",
+        userNotes: "",
+        task: { completed: false, waterSchedule: 7 }
+    }
     const [showing, setShowing] = useState(false);
     const toggleShowing = () => {
         setShowing(!showing)
     }
     const [isValidState, setIsValidState] = useState({ valid: true, message: "" })
-    const [newPlant, setNewPlant] = useState({
-        name: "",
-        type: "",
-        image: "",
-        potSize: "",
-        roomName: "", // is an empty sufficient for a dropdown? same for direction
-        direction: "",
-        userNotes: "",
-        task: { completed: false, waterSchedule: 7 }
-    });
+    const [newPlant, setNewPlant] = useState(initialPlantObject);
     const handleInputChange = (e) => {
         setNewPlant({
             ...newPlant,
@@ -34,16 +35,7 @@ const PlantNew = (props) => {
         }
         if (validSubmission) {
             props.createNewPlant(newPlant)
-            setNewPlant({
-                name: "",
-                type: "",
-                image: "",
-                potSize: "",
-                roomName: "", // is an empty sufficient for a dropdown? same for direction
-                direction: "",
-                userNotes: "",
-                task: { completed: false, waterSchedule: 7 }
-            })
+            setNewPlant(initialPlantObject)
             setIsValidState({
                 valid: true,
                 message: ""

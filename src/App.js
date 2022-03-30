@@ -35,8 +35,8 @@ function App() {
     <div className="App">
       <Header></Header>
       <h1>Welcome to PlantPet!</h1>
-      <TaskContainer plants={plants}></TaskContainer>
-      <PlantContainer plants={plants}></PlantContainer>
+      <TaskContainer plants={plants} getPlants={getPlants}></TaskContainer>
+      <PlantContainer plants={plants} getPlants={getPlants}></PlantContainer>
     </div>
   );
 }
