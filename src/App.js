@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from './components/header';
+import Hero from './components/hero';
 import TaskContainer from './components/TaskContainer/taskContainer';
 import PlantContainer from './components/PlantContainer/plantContainer';
 import Footer from './components/footer';
@@ -39,7 +40,7 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <h1 className="main-heading">Welcome to PlantPet!</h1>
+      <Hero></Hero>
       <TaskContainer plants={plants} setPlants={setPlants} requestError={requestError}></TaskContainer>
       <PlantContainer plants={plants} setPlants={setPlants} requestError={requestError}></PlantContainer>
       <Footer></Footer>

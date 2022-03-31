@@ -57,10 +57,16 @@ These are additions I wasn't able to get to within project timeframe, but want t
     - `maintenance: { type: "High" | "Medium" | "Low" }` (possibly based on hardiness)
     - `waterSched: { type: Number }` (possibly based on drought/humidity resistance)
 - API: It was difficult to find a public plant API that worked for my project. Hoping to expand on this later on.
+- Search functionality for user added plants
+- Upcoming Tasks component
 
 
 ## Credits
 
-- Favicon and Logo - [Favicon.io](https://favicon.io/emoji-favicons/potted-plant)
-- Icons - [FontAwesome](https://fontawesome.com/icons)
-- Photos - [Unsplash]()
+- Favicon and Logo 
+    - [Favicon.io](https://favicon.io/emoji-favicons/potted-plant)
+- Icons 
+    - [FontAwesome](https://fontawesome.com/icons)
+- Photos 
+    - [Angèle Kamp](https://unsplash.com/@angelekamp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/plants?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+    - [Rainier Ridao](https://unsplash.com/@rainierridao?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

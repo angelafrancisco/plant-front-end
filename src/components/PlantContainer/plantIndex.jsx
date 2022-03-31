@@ -40,7 +40,7 @@ const PlantIndex = (props) => {
                                 {isValidState.valid ? null : <p className='form-error'>{isValidState.message}</p>}
                                 Plant Name: <input onChange={handleInputChange} type="text" name="name" value={updatePlant.name} />
                                 Plant Type: <input onChange={handleInputChange} type="text" name="type" value={updatePlant.type} />
-                                Image: <input onChange={handleInputChange} type="text" name="image" value={updatePlant.image} />
+                                Image URL: <input onChange={handleInputChange} type="text" name="image" value={updatePlant.image} />
                                 Pot Size: <input onChange={handleInputChange} type="number" name="potSize" value={updatePlant.potSize} /> in.
                                 Location: <input onChange={handleInputChange} type="text" name="roomName" value={updatePlant.roomName} />
                                 Window Placement: <input onChange={handleInputChange} type="text" name="direction" value={updatePlant.direction} />

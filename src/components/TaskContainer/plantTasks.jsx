@@ -5,7 +5,7 @@ const PlantTasks = (props) => {
     return (
         <>
             <div className="plant-index-container">
-                <img src="#" alt="plant" className="plant-index-img small-img" />
+                <div className="plant-index-img" style={{ backgroundImage: `url(${props.plant.image})` }}></div>
                 <div className="plant-index-box">
                     <div className="plant-index-text">
                         <h3 className="plant-text-name">{props.plant.name}</h3>

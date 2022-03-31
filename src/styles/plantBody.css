@@ -1,20 +1,24 @@
-/* LEFT ALIGNED */
-.section-header, .grid-container {
+.section-header,
+.grid-container {
     padding: 0 100px;
 }
 
 .section-header {
     color: var(--header-color);
+    margin-top: 30px;
 }
+
 .task-btn-section {
     display: flex;
-    padding:0 80px;
+    padding: 0 80px;
 }
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
+
 .plant-index-container {
     border: var(--outline-color);
     background-color: var(--outline-bg-color);
@@ -23,6 +27,7 @@
     align-items: center;
     padding: 10px;
 }
+
 .plant-index-img {
     border-radius: var(--img-radius);
     height: 200px;
@@ -31,20 +36,26 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-.plant-index-box, .plant-index-text-box {
+
+.plant-index-box,
+.plant-index-text-box {
     display: flex;
     flex-direction: column;
 }
+
 .plant-index-box {
     justify-content: space-between;
 }
+
 .plant-index-text-box {
     justify-content: center;
     margin-bottom: 30px;
 }
+
 .plant-text-name {
     margin-bottom: 10px;
 }
+
 .plant-text.type {
     font-style: italic;
 }
