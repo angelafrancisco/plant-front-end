@@ -3,9 +3,12 @@ import Header from './components/header';
 import TaskContainer from './components/TaskContainer/taskContainer';
 import PlantContainer from './components/PlantContainer/plantContainer';
 import './styles/App.css';
-import './styles/plantBody.css'
+import './styles/header.css';
+import './styles/footer.css';
+import './styles/plantBody.css';
 
 function App() {
+  const [requestError, setRequestError] = useState("");
   // const [plants, setPlants] = useState([]);
   const [plants, setPlants] = useState([{
     '_id': "1",
@@ -21,7 +24,7 @@ function App() {
 
   const getPlants = async () => {
     try {
-      const plants = await fetch("http://localhost:3000/plants");
+      const plants = await fetch("http://localhost:3001/plants");
       // const plants = await fetch("https://plantpet-api.herokuapp.com/plants");
       const parsedPlants = await plants.json();
       setPlants(parsedPlants.data);
@@ -31,12 +34,13 @@ function App() {
   }
 
   useEffect(getPlants, []);
+
   return (
     <div className="App">
       <Header></Header>
       <h1>Welcome to PlantPet!</h1>
-      <TaskContainer plants={plants} getPlants={getPlants}></TaskContainer>
-      <PlantContainer plants={plants} getPlants={getPlants}></PlantContainer>
+      <TaskContainer plants={plants} setPlants={setPlants} requestError={requestError}></TaskContainer>
+      <PlantContainer plants={plants} setPlants={setPlants} requestError={requestError}></PlantContainer>
     </div>
   );
 }

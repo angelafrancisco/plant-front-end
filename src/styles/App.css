@@ -9,31 +9,15 @@
     --outline-color: 1px solid #90B030;
     --img-radius: 50%;
 }
-/* GLOBAL STYLES */
+
 * {
     margin: 0;
 }
+
 .App {
     background-color: #d1dbb4;
     height: 100vh;
 }
-/* HEADER */
-nav {
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    margin-bottom: 20px;
-    height: 75px;
-    border-bottom: var(--outline-color);
-}
-.nav-links-list {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-}
-/* FOOTER */
 
 /* LINKS */
 a {
@@ -43,8 +27,10 @@ a {
     margin: 20px;
     cursor: pointer;
 }
+
 /* BUTTONS */
-.solid-btn, .outline-btn {
+.solid-btn,
+.outline-btn {
     text-align: center;
     width: 100px;
     padding: 10px;
@@ -52,11 +38,13 @@ a {
     font-size: 14px;
     border-radius: var(--btn-radius);
 }
+
 .solid-btn {
     background-color: var(--solid-bg-color);
     color: var(--solid-txt-color);
     border: none;
 }
+
 .outline-btn {
     background-color: var(--outline-bg-color);
     color: var(--outline-txt-color);

@@ -1,9 +1,8 @@
 import PlantTasks from "./plantTasks";
 
 const TaskContainer = (props) => {
-
     // set up function to check through every plant in array
-    const checkIfTasksComplete = props.plants.every(plant => plant.task.completed);
+    const checkIfTasksComplete = props.plants.every(plant => plant.task?.completed);
 
     // UPDATE
     const updateTask = async (idToUpdate, taskToUpdate) => {
@@ -19,11 +18,10 @@ const TaskContainer = (props) => {
             const parsedResponse = await apiResponse.json();
             console.log(parsedResponse);
             if (parsedResponse.success) {
-                // const newPlants = props.plants.map(plant => plant._id === idToUpdate ? taskToUpdate : plan)
-                // setPlants(newPlants)
-                props.getPlants()
+                const newPlants = props.plants.map(plant => plant._id === idToUpdate ? taskToUpdate : plant)
+                props.setPlants(newPlants)
             } else {
-                setRequestError(parsedResponse.data);
+                props.setRequestError(parsedResponse.data);
             }
         } catch (err) {
             console.log(err)

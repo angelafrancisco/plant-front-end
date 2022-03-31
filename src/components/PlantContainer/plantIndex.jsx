@@ -6,16 +6,7 @@ const PlantIndex = (props) => {
         setShowing(!showing)
     }
     const [isValidState, setIsValidState] = useState({ valid: true, message: "" });
-    const [updatePlant, setUpdatePlant] = useState({
-        name: props.plant.name,
-        type: props.plant.type,
-        image: props.plant.image,
-        potSize: props.plant.potSize,
-        roomName: props.plant.roomName,
-        direction: props.plant.direction,
-        userNotes: props.plant.userNotes,
-        _id: props.plant._id
-    });
+    const [updatePlant, setUpdatePlant] = useState(props.plant);
     const handleInputChange = (e) => {
         setUpdatePlant({
             ...updatePlant,
