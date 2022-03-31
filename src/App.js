@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import Header from './components/header';
 import TaskContainer from './components/TaskContainer/taskContainer';
 import PlantContainer from './components/PlantContainer/plantContainer';
+import Footer from './components/footer';
 import './styles/App.css';
 import './styles/header.css';
-import './styles/footer.css';
 import './styles/plantBody.css';
+import './styles/footer.css';
 
 function App() {
   const [requestError, setRequestError] = useState("");
@@ -38,9 +39,10 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <h1>Welcome to PlantPet!</h1>
+      <h1 className="main-heading">Welcome to PlantPet!</h1>
       <TaskContainer plants={plants} setPlants={setPlants} requestError={requestError}></TaskContainer>
       <PlantContainer plants={plants} setPlants={setPlants} requestError={requestError}></PlantContainer>
+      <Footer></Footer>
     </div>
   );
 }

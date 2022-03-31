@@ -30,7 +30,7 @@ https://github.com/angelafrancisco/plant-back-end
 
 <!-- show images here -->
 
-## Project Requirements (MVP)
+## GA Project Requirements (MVP)
 
 - A working full-stack application, using the MERN stack: 
     -- Node.js, Mongoose, Express and React.
@@ -39,8 +39,8 @@ https://github.com/angelafrancisco/plant-back-end
 - At least three react components, defined in their own files, besides App.js.
 - Be deployed online and accessible to the public via Heroku
 - Two git repositories, one for backend and one for frontend.
-- A README.md file with explanations of the technologies used, the approach taken, unsolved problems, user stories, and notes to yourself so you can come back to your project later in the course and be able to pick up your train of thought, etc
-- Have links to your hosted and working apps in the README.md files in your GitHub repos.
+- A `README.md` file with explanations of the technologies used, the approach taken, unsolved problems, user stories, and notes to yourself so you can come back to your project later in the course and be able to pick up your train of thought, etc
+- Have links to your hosted and working apps in the `README.md` files in your GitHub repos.
 
 ## Project Stretch Goals
 
@@ -53,15 +53,14 @@ https://github.com/angelafrancisco/plant-back-end
 These are additions I wasn't able to get to within project timeframe, but want to implement in the future!
 
 - Model: Plant
-    -- petFriendly: { type: Boolean } (auto generated based on toxicity level?)
-    -- maintenance: { type: "High" | "Medium" | "Low" } (auto generated based on hardiness?)
-    -- waterSched: { type: Number } (auto generated? could be based off of drought/humidity resistant?)
+    - `petFriendly: { type: Boolean }` (possibly based on toxicity level)
+    - `maintenance: { type: "High" | "Medium" | "Low" }` (possibly based on hardiness)
+    - `waterSched: { type: Number }` (possibly based on drought/humidity resistance)
 - API: It was difficult to find a public plant API that worked for my project. Hoping to expand on this later on.
 
 
 ## Credits
 
-- Favicon
-- Logo
-- Icons (FontAwesome)
-- Photos (Unsplash)
+- Favicon and Logo - [Favicon.io](https://favicon.io/emoji-favicons/potted-plant)
+- Icons - [FontAwesome](https://fontawesome.com/icons)
+- Photos - [Unsplash]()

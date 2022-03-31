@@ -16,7 +16,9 @@
 
 .App {
     background-color: #d1dbb4;
-    height: 100vh;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 300px;
 }
 
 /* LINKS */
@@ -49,4 +51,8 @@ a {
     background-color: var(--outline-bg-color);
     color: var(--outline-txt-color);
     border: var(--outline-color);
+}
+
+.main-heading {
+    text-align: center;
 }

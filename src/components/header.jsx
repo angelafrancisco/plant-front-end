@@ -1,12 +1,18 @@
-const Header = (props) => {
+import { useState } from 'react';
+
+const Header = () => {
+    const [showing, setShowing] = useState(false);
+    const toggleShowing = () => {
+        setShowing(!showing)
+    }
     return (
         <nav>
             <div className="nav-container">
-                <a href="https://plantpet.herokuapp.com/"><img src="#" alt="PlantPet Logo" /></a>
+                <a href="https://plantpet.herokuapp.com/" className="Logo"><img src="img/favicon.ico" alt="PlantPet Logo" />PlantPet</a>
             </div>
             <div className="nav-container">
                 {/* mobile hamburger nav */}
-                <div className="nav-hamburger-container">
+                <div onClick={toggleShowing} className="nav-hamburger-container">
                     <div className="nav-hamburger bar1"></div>
                     <div className="nav-hamburger bar2"></div>
                     <div className="nav-hamburger bar3"></div>
@@ -17,18 +23,17 @@ const Header = (props) => {
                     <li><a href="#" className="nav-link">Home</a></li>
                     <li><a href="#" className="nav-link">My Plants</a></li>
                     <li><a href="#" className="nav-link">Search</a></li>
+                    <li><a href="#" className="solid-btn">Logout</a></li>
                 </ul>
                 {/* :
                     // not logged in nav links */}
-                <div className="nav-links-container-guest">
-                    <ul className="nav-links-list">
-                        <li><a href="#" className="nav-link">Features</a></li>
-                        <li><a href="#" className="nav-link">Community</a></li>
-                        <li><a href="#" className="nav-link">About</a></li>
-                    </ul>
-                    <a href="#" className="login-btn">Login</a>
-                    <a href="#" className="register-btn">Register</a>
-                </div>
+                <ul className="nav-links-list guest">
+                    <li><a href="#" className="nav-link">Features</a></li>
+                    <li><a href="#" className="nav-link">Community</a></li>
+                    <li><a href="#" className="nav-link">About</a></li>
+                    <li><a href="#" className="outline-btn">Login</a></li>
+                    <li><a href="#" className="solid-btn">Register</a></li>
+                </ul>
                 {/* } */}
             </div>
         </nav >
