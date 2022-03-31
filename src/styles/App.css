@@ -39,6 +39,7 @@ a {
     font-weight: 500;
     font-size: 14px;
     border-radius: var(--btn-radius);
+    /* margin: 5px; */
 }
 
 .solid-btn {
@@ -51,6 +52,12 @@ a {
     background-color: var(--outline-bg-color);
     color: var(--outline-txt-color);
     border: var(--outline-color);
+}
+
+button.solid-btn,
+button.outline-btn {
+    width: 130px;
+    margin: 20px;
 }
 
 .hero {
@@ -66,4 +73,10 @@ a {
 .main-heading {
     text-align: center;
     color: #ffffff;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }

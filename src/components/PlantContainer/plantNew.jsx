@@ -62,7 +62,7 @@ const PlantNew = (props) => {
                         <button type="submit" className="solid-btn">Add Plant!</button>
                     </form>
                 </div >
-                : <button onClick={toggleShowing} className="solid-btn">Create New Plant!</button>}
+                : <button onClick={toggleShowing} className="solid-btn">Add Plant!</button>}
         </>
     )
 }

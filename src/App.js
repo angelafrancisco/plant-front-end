@@ -41,8 +41,10 @@ function App() {
     <div className="App">
       <Header></Header>
       <Hero></Hero>
-      <TaskContainer plants={plants} setPlants={setPlants} requestError={requestError}></TaskContainer>
-      <PlantContainer plants={plants} setPlants={setPlants} requestError={requestError}></PlantContainer>
+      <div className="content-wrapper">
+        <TaskContainer plants={plants} setPlants={setPlants} requestError={requestError}></TaskContainer>
+        <PlantContainer plants={plants} setPlants={setPlants} requestError={requestError}></PlantContainer>
+      </div>
       <Footer></Footer>
     </div>
   );

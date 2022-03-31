@@ -74,12 +74,15 @@ const PlantContainer = (props) => {
     }
 
     return (
-        <>
-            <h2 className="section-header">My Plants</h2>
-            <PlantNew
-                createNewPlant={createNewPlant}
-                newPlantServerError={newPlantServerError}
-            ></PlantNew>
+        <div className="plant-container">
+            <h2 className="section-header plants">My Plants</h2>
+            <div className="btn-section plants">
+                <PlantNew
+                    createNewPlant={createNewPlant}
+                    newPlantServerError={newPlantServerError}
+                ></PlantNew>
+                <a href="#" className="outline-btn grave">Plant Graveyard</a>
+            </div>
             {!props.plants ?
                 <div className="message-box">
                     <h3 className="message-text">Looks like you haven't added any plants yet!</h3>
@@ -89,7 +92,7 @@ const PlantContainer = (props) => {
                     ></PlantNew>
                 </div>
                 :
-                <div className="grid-container">
+                <div className="grid-container plants">
                     {props.plants.map((plant) => {
                         return <PlantIndex
                             key={plant._id}
@@ -100,7 +103,7 @@ const PlantContainer = (props) => {
                     })}
                 </div>
             }
-        </>
+        </div>
     )
 }
 

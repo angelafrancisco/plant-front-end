@@ -45,10 +45,10 @@ const PlantIndex = (props) => {
                                 Location: <input onChange={handleInputChange} type="text" name="roomName" value={updatePlant.roomName} />
                                 Window Placement: <input onChange={handleInputChange} type="text" name="direction" value={updatePlant.direction} />
                                 Notes: <input onChange={handleInputChange} type="text" name="userNotes" value={updatePlant.userNotes} />
-                                <button type="submit" className="solid-btn">Update</button>
+                                <button type="submit" className="solid-btn update">Update</button>
                             </form>
                         </div>
-                        : <button onClick={toggleShowing} className="outline-btn">Edit</button>}
+                        : <button onClick={toggleShowing} className="outline-btn edit">Edit</button>}
                     <button onClick={() => props.deletePlant(props.plant._id)} className="outline-btn">Delete</button>
                 </div>
             </div>

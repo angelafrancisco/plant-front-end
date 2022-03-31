@@ -28,9 +28,9 @@ const TaskContainer = (props) => {
         }
     }
     return (
-        <>
-            <h2 className="section-header">My Tasks</h2>
-            <div className="task-btn-section">
+        <div className="task-container">
+            <h2 className="section-header task">My Tasks</h2>
+            <div className="btn-section task">
                 <a href="#" className="solid-btn">Today</a>
                 <a href="#" className="outline-btn">Upcoming</a>
             </div>
@@ -39,7 +39,7 @@ const TaskContainer = (props) => {
                     <h3 className="message-text">All tasks completed for today!</h3>
                 </div>
                 :
-                <div className="grid-container">
+                <div className="grid-container task">
                     {props.plants.map((plant) => {
                         if (!plant.task.completed) {
                             return <PlantTasks
@@ -52,7 +52,7 @@ const TaskContainer = (props) => {
                     }
                 </div>
             }
-        </>
+        </div>
     )
 }
 

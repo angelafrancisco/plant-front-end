@@ -1,22 +1,49 @@
-.section-header,
-.grid-container {
-    padding: 0 100px;
-}
-
 .section-header {
     color: var(--header-color);
     margin-top: 30px;
 }
 
-.task-btn-section {
+.section-header.task {
+    padding: 0 100px;
+}
+
+.section-header.plants {
+    padding-left: 20px;
+}
+
+.btn-section {
     display: flex;
-    padding: 0 80px;
+}
+
+.btn-section.task {
+    padding-left: 80px;
+}
+
+.btn-section.plants {
+    justify-content: left;
+}
+
+.grave {
+    font-size: 12px;
+}
+
+button.edit,
+button.update {
+    margin-bottom: 0;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+}
+
+.grid-container.task {
+    padding: 0 30px 0 100px;
+}
+
+.grid-container.plants {
+    padding: 0 100px 0 20px;
 }
 
 .plant-index-container {
@@ -37,6 +64,11 @@
     background-repeat: no-repeat;
 }
 
+.plant-index-img.task {
+    height: 100px;
+    width: 100px;
+}
+
 .plant-index-box,
 .plant-index-text-box {
     display: flex;
@@ -44,12 +76,12 @@
 }
 
 .plant-index-box {
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .plant-index-text-box {
     justify-content: center;
-    margin-bottom: 30px;
+    padding-left: 20px;
 }
 
 .plant-text-name {
