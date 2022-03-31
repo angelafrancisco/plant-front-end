@@ -8,8 +8,8 @@ const PlantContainer = (props) => {
     // CREATE
     const createNewPlant = async (newPlant) => {
         try {
-            const apiResponse = await fetch("http://localhost:3001/plants", {
-                // const apiResponse = await fetch("https://plantpet-api.herokuapp.com/", {
+            // const apiResponse = await fetch("http://localhost:3001/plants", {
+            const apiResponse = await fetch("https://plantpet-api.herokuapp.com/plants", {
                 method: "POST",
                 body: JSON.stringify(newPlant),
                 headers: {
@@ -32,8 +32,8 @@ const PlantContainer = (props) => {
     // UPDATE
     const updatePlant = async (idToUpdate, plantToUpdate) => {
         try {
-            const apiResponse = await fetch(`http://localhost:3001/plants/${idToUpdate}`, {
-                // const apiResponse = await fetch(`https://plantpet-api.herokuapp.com/${idToUpdate}`, {
+            // const apiResponse = await fetch(`http://localhost:3001/plants/${idToUpdate}`, {
+            const apiResponse = await fetch(`https://plantpet-api.herokuapp.com/plants/${idToUpdate}`, {
                 method: "PUT",
                 body: JSON.stringify(plantToUpdate),
                 headers: {
@@ -43,7 +43,6 @@ const PlantContainer = (props) => {
             const parsedResponse = await apiResponse.json();
             // debugger
             if (parsedResponse.success) {
-
                 const newPlants = props.plants.map(plant => plant._id === idToUpdate ? plantToUpdate : plant)
                 props.setPlants(newPlants)
             } else {
@@ -57,8 +56,8 @@ const PlantContainer = (props) => {
     // DELETE
     const deletePlant = async (idToDelete) => {
         try {
-            const apiResponse = await fetch(`http://localhost:3001/plants/${idToDelete}`, {
-                // const apiResponse = await fetch(`https://plantpet-api.herokuapp.com/${idToDelete}`, {
+            // const apiResponse = await fetch(`http://localhost:3001/plants/${idToDelete}`, {
+            const apiResponse = await fetch(`https://plantpet-api.herokuapp.com/plants/${idToDelete}`, {
                 method: "DELETE"
             })
             const parsedResponse = await apiResponse.json();

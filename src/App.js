@@ -29,8 +29,8 @@ function App() {
   useEffect(() => {
     const getPlants = async () => {
       try {
-        const plants = await fetch("http://localhost:3001/plants");
-        // const plants = await fetch("https://plantpet-api.herokuapp.com/");
+        // const plants = await fetch("http://localhost:3001/plants");
+        const plants = await fetch("https://plantpet-api.herokuapp.com/plants");
         const parsedPlants = await plants.json();
         setPlants(parsedPlants.data);
       } catch (err) {
