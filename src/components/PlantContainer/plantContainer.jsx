@@ -16,15 +16,17 @@ const PlantContainer = (props) => {
                     "Content-Type": "application/json"
                 }
             })
+            // debugger;
             const parsedResponse = await apiResponse.json();
             console.log(parsedResponse);
             if (parsedResponse.success) {
-                props.setPlants([parsedResponse.data, ...props.plants]);
+                props.setPlants([...props.plants, newPlant]);
             } else {
                 setNewPlantServerError(parsedResponse.data);
                 // for future could: refactor state from newPlantForm child to here, this is where we'd know if it worked or not
             }
         } catch (err) {
+            debugger;
             console.log(err)
         }
     }
