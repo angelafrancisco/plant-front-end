@@ -20,19 +20,19 @@ const Header = () => {
                 {/* {props.user.isLoggedIn ? */}
                 {/* // user logged in nav links */}
                 < ul className="nav-links-list isloggedin">
-                    <li><a href="#" className="nav-link">Home</a></li>
-                    <li><a href="#" className="nav-link">My Plants</a></li>
-                    <li><a href="#" className="nav-link">Search</a></li>
-                    <li><a href="#" className="solid-btn">Logout</a></li>
+                    <li><a href="https://plantpet.herokuapp.com/" className="nav-link">Home</a></li>
+                    <li><a href="https://plantpet.herokuapp.com/" className="nav-link">My Plants</a></li>
+                    <li><a href="https://plantpet.herokuapp.com/" className="nav-link">Search</a></li>
+                    <li><a href="https://plantpet.herokuapp.com/" className="solid-btn">Logout</a></li>
                 </ul>
                 {/* :
                     // not logged in nav links */}
                 <ul className="nav-links-list guest">
-                    <li><a href="#" className="nav-link">Features</a></li>
-                    <li><a href="#" className="nav-link">Community</a></li>
-                    <li><a href="#" className="nav-link">About</a></li>
-                    <li><a href="#" className="outline-btn">Login</a></li>
-                    <li><a href="#" className="solid-btn">Register</a></li>
+                    <li><a href="https://plantpet.herokuapp.com/" className="nav-link">Features</a></li>
+                    <li><a href="https://plantpet.herokuapp.com/" className="nav-link">Community</a></li>
+                    <li><a href="https://plantpet.herokuapp.com/" className="nav-link">About</a></li>
+                    <li><a href="https://plantpet.herokuapp.com/" className="outline-btn">Login</a></li>
+                    <li><a href="https://plantpet.herokuapp.com/" className="solid-btn">Register</a></li>
                 </ul>
                 {/* } */}
             </div>

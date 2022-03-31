@@ -7,8 +7,8 @@ const TaskContainer = (props) => {
     // UPDATE
     const updateTask = async (idToUpdate, taskToUpdate) => {
         try {
-            // const apiResponse = await fetch(`http://localhost:3001/plants/${idToUpdate}`, {
-            const apiResponse = await fetch(`https://plantpet-api.herokuapp.com/${idToUpdate}`, {
+            const apiResponse = await fetch(`http://localhost:3001/plants/${idToUpdate}`, {
+                // const apiResponse = await fetch(`https://plantpet-api.herokuapp.com/${idToUpdate}`, {
                 method: "PUT",
                 body: JSON.stringify(taskToUpdate),
                 headers: {
@@ -31,23 +31,27 @@ const TaskContainer = (props) => {
         <div className="task-container">
             <h2 className="section-header task">My Tasks</h2>
             <div className="btn-section task">
-                <a href="#" className="solid-btn">Today</a>
-                <a href="#" className="outline-btn">Upcoming</a>
+                <a href="https://plantpet.herokuapp.com/" className="solid-btn">Today</a>
+                <a href="https://plantpet.herokuapp.com/" className="outline-btn">Upcoming</a>
             </div>
             {checkIfTasksComplete ?
-                <div className="message-box">
-                    <h3 className="message-text">All tasks completed for today!</h3>
+                <div className="grid-container task">
+                    <div className="message-box">
+                        <h3 className="message-text">All tasks completed for today!</h3>
+                    </div>
                 </div>
                 :
                 <div className="grid-container task">
                     {props.plants.map((plant) => {
-                        if (!plant.task.completed) {
-                            return <PlantTasks
-                                key={plant._id}
-                                plant={plant}
-                                updateTask={updateTask}
-                            ></PlantTasks>
-                        }
+                        return (
+                            !plant.task.completed ?
+                                <PlantTasks
+                                    key={plant._id}
+                                    plant={plant}
+                                    updateTask={updateTask}
+                                ></PlantTasks>
+                                : null
+                        )
                     })
                     }
                 </div>
