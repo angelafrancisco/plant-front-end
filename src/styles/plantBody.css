@@ -91,3 +91,36 @@ button.update {
 .plant-text.type {
     font-style: italic;
 }
+
+.modal {
+    background-color: var(--outline-bg-color);
+    color: var(--outline-txt-color);
+    border: var(--outline-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 200px auto;
+    overflow: hidden;
+    padding: 25px;
+    max-width: 500px;
+}
+
+.overlay-modal {
+    background: rgba(255, 255, 255, 0.8);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+select {
+    border: var(--outline-color);
+    height: 20px;
+}

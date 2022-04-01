@@ -39,7 +39,7 @@ a {
     font-weight: 500;
     font-size: 14px;
     border-radius: var(--btn-radius);
-    /* margin: 5px; */
+    cursor: pointer;
 }
 
 .solid-btn {

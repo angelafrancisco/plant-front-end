@@ -24,8 +24,6 @@ function App() {
   //   'task': { 'completed': false, 'waterSchedule': 7 }
   // }]);
 
-
-
   useEffect(() => {
     const getPlants = async () => {
       try {

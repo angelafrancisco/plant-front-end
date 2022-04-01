@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PlantModal from "./plantModal";
 
 const PlantIndex = (props) => {
     const [showing, setShowing] = useState(false);
@@ -31,22 +32,37 @@ const PlantIndex = (props) => {
                     <p className="plant-text">Notes: {props.plant.userNotes}</p>
                 </div>
                 {/* modal opens to edit */}
-                {showing ?
+                <PlantModal isOpen={showing}>
                     <div className="edit-plant-form">
                         <button onClick={toggleShowing} className="outline-btn">X</button>
                         <form onSubmit={submitUpdatePlant}>
                             {isValidState.valid ? null : <p className='form-error'>{isValidState.message}</p>}
-                            Plant Name: <input onChange={handleInputChange} type="text" name="name" value={updatePlant.name} />
-                            Plant Type: <input onChange={handleInputChange} type="text" name="type" value={updatePlant.type} />
-                            Image URL: <input onChange={handleInputChange} type="text" name="image" value={updatePlant.image} />
-                            Pot Size: <input onChange={handleInputChange} type="number" name="potSize" value={updatePlant.potSize} /> in.
-                            Location: <input onChange={handleInputChange} type="text" name="roomName" value={updatePlant.roomName} />
-                            Window Placement: <input onChange={handleInputChange} type="text" name="direction" value={updatePlant.direction} />
-                            Notes: <input onChange={handleInputChange} type="text" name="userNotes" value={updatePlant.userNotes} />
+                            <label for="name">Plant Name: </label>
+                            <input onChange={handleInputChange} type="text" name="name" value={updatePlant.name} />
+                            <label for="type">Plant Type: </label>
+                            <input onChange={handleInputChange} type="text" name="type" value={updatePlant.type} />
+                            <label for="image">Image url: </label>
+                            <input onChange={handleInputChange} type="text" name="image" value={updatePlant.image} />
+                            <label for="potSize">Pot Size (in): </label>
+                            <input onChange={handleInputChange} type="number" name="potSize" value={updatePlant.potSize} />
+                            <label for="roomName">Location: </label>
+                            <input onChange={handleInputChange} type="text" name="roomName" value={updatePlant.roomName} />
+                            <label for="direction">Window Direction: </label>
+                            {/* <input onChange={handleInputChange} type="text" name="direction" value={updatePlant.direction} /> */}
+                            <select name="direction" required value={updatePlant.direction} onChange={handleInputChange}>
+                                <option value="" disabled>-Select-</option>
+                                <option value="North">North</option>
+                                <option value="South">South</option>
+                                <option value="East">East</option>
+                                <option value="West">West</option>
+                            </select>
+                            <label for="notes">Notes: </label>
+                            <input onChange={handleInputChange} type="text" name="userNotes" value={updatePlant.userNotes} />
                             <button type="submit" className="solid-btn update">Update</button>
                         </form>
                     </div>
-                    : <button onClick={toggleShowing} className="outline-btn edit">Edit</button>}
+                </PlantModal>
+                <button onClick={toggleShowing} className="outline-btn edit">Edit</button>
                 <button onClick={() => props.deletePlant(props.plant._id)} className="outline-btn">Delete</button>
             </div>
         </div>

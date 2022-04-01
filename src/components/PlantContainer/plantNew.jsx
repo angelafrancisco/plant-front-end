@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PlantModal from './plantModal';
 
 const PlantNew = (props) => {
     const initialPlantObject = {
@@ -12,11 +13,11 @@ const PlantNew = (props) => {
         task: { completed: false, waterSchedule: 7 }
     }
     const [showing, setShowing] = useState(false);
+    const [isValidState, setIsValidState] = useState({ valid: true, message: "" });
+    const [newPlant, setNewPlant] = useState(initialPlantObject);
     const toggleShowing = () => {
         setShowing(!showing)
     }
-    const [isValidState, setIsValidState] = useState({ valid: true, message: "" })
-    const [newPlant, setNewPlant] = useState(initialPlantObject);
     const handleInputChange = (e) => {
         setNewPlant({
             ...newPlant,
@@ -35,34 +36,49 @@ const PlantNew = (props) => {
         }
         if (validSubmission) {
             props.createNewPlant(newPlant)
-            setNewPlant(initialPlantObject)
             setIsValidState({
                 valid: true,
                 message: ""
             })
             setShowing(false)
+            setNewPlant(initialPlantObject)
         }
     }
     return (
         <>
             {/* modal open to view new plant form */}
-            {showing ?
+            <PlantModal isOpen={showing}>
                 <div className="new-plant-form">
                     <button onClick={toggleShowing} className="outline-btn">X</button>
                     <form onSubmit={submitNewPlant}>
                         {isValidState.valid ? null : <p className='form-error'>{isValidState.message}</p>}
                         {props.newPlantServerError ? <p className='form-error'>{props.newPlantServerError}</p> : null}
-                        Plant Name: <input onChange={handleInputChange} type="text" name="name" value={newPlant.name} />
-                        Plant Type: <input onChange={handleInputChange} type="text" name="type" value={newPlant.type} />
-                        Image: <input onChange={handleInputChange} type="text" name="image" value={newPlant.image} />
-                        Pot Size: <input onChange={handleInputChange} type="number" name="potSize" value={newPlant.potSize} /> in.
-                        Location: <input onChange={handleInputChange} type="text" name="roomName" value={newPlant.roomName} />
-                        Window Placement: <input onChange={handleInputChange} type="text" name="direction" value={newPlant.direction} />
-                        Notes: <input onChange={handleInputChange} type="text" name="userNotes" value={newPlant.userNotes} />
+                        <label for="name">Plant Name: </label>
+                        <input onChange={handleInputChange} type="text" name="name" value={newPlant.name} />
+                        <label for="type">Plant Type: </label>
+                        <input onChange={handleInputChange} type="text" name="type" value={newPlant.type} placeholder="i.e. succulent, cactus, etc." />
+                        <label for="image">Image url: </label>
+                        <input onChange={handleInputChange} type="text" name="image" value={newPlant.image} />
+                        <label for="potSize">Pot Size (in): </label>
+                        <input onChange={handleInputChange} type="number" name="potSize" value={newPlant.potSize} />
+                        <label for="roomName">Location: </label>
+                        <input onChange={handleInputChange} type="text" name="roomName" value={newPlant.roomName} />
+                        <label for="direction">Window Direction: </label>
+                        {/* <input onChange={handleInputChange} type="text" name="direction" value={newPlant.direction} /> */}
+                        <select name="direction" required value={newPlant.direction} onChange={handleInputChange}>
+                            <option value="" disabled>-Select-</option>
+                            <option value="North">North</option>
+                            <option value="South">South</option>
+                            <option value="East">East</option>
+                            <option value="West">West</option>
+                        </select>
+                        <label for="notes">Notes: </label>
+                        <input onChange={handleInputChange} type="text" name="userNotes" value={newPlant.userNotes} />
                         <button type="submit" className="solid-btn">Add Plant!</button>
                     </form>
                 </div >
-                : <button onClick={toggleShowing} className="solid-btn">Add Plant!</button>}
+            </PlantModal>
+            <button onClick={toggleShowing} className="solid-btn">Add Plant!</button>
         </>
     )
 }
