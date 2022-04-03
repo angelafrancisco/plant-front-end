@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Header from './components/header';
 import Hero from './components/hero';
+import UserContainer from './components/UserContainer/userContainer';
 import TaskContainer from './components/TaskContainer/taskContainer';
 import PlantContainer from './components/PlantContainer/plantContainer';
 import Footer from './components/footer';
@@ -43,6 +44,7 @@ function App() {
       <Header></Header>
       <Hero></Hero>
       <div className="content-wrapper">
+        <UserContainer></UserContainer>
         <TaskContainer plants={plants} setPlants={setPlants} requestError={requestError}></TaskContainer>
         <PlantContainer plants={plants} setPlants={setPlants} requestError={requestError}></PlantContainer>
       </div>
