@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PlantTasks from "./plantTasks";
 
 const TaskContainer = (props) => {
@@ -31,8 +32,9 @@ const TaskContainer = (props) => {
         <div className="task-container">
             <h2 className="section-header task">My Tasks</h2>
             <div className="btn-section task">
-                <a href="https://plantpet.herokuapp.com/" className="solid-btn">Today</a>
-                <a href="https://plantpet.herokuapp.com/" className="outline-btn">Upcoming</a>
+                {/* link placeholders */}
+                <Link to='/dashboard' className="solid-btn">Today</Link>
+                <Link to='/dashboard' className="outline-btn">Upcoming</Link>
             </div>
             {checkIfTasksComplete ?
                 <div className="grid-container task">

@@ -64,6 +64,7 @@ nav {
     list-style-type: none;
     display: none;
     justify-content: center;
+    align-items: center;
 }
 
 @media (min-width: 480px) {
@@ -72,6 +73,7 @@ nav {
     }
 }
 
+/* 
 .nav-links-list.guest {
     display: none;
-}
+} */

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import PlantNew from "./plantNew";
+import { Link } from "react-router-dom";
+import PlantNew from "./plantNew"
 import PlantIndex from "./plantIndex";
 
 const PlantContainer = (props) => {
@@ -85,7 +86,8 @@ const PlantContainer = (props) => {
                     createNewPlant={createNewPlant}
                     newPlantServerError={newPlantServerError}
                 ></PlantNew>
-                <a href="https://plantpet.herokuapp.com/" className="outline-btn grave">Plant Graveyard</a>
+                {/* link placeholder */}
+                <Link to='/dashboard' className="outline-btn grave">Plant Graveyard</Link>
             </div>
             {props.plants.length === 0 ?
                 < div className="grid-container plants">
