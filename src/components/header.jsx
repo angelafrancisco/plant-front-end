@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
     const [showing, setShowing] = useState(false);
     const toggleShowing = () => {
         setShowing(!showing)
@@ -8,7 +9,7 @@ const Header = () => {
     return (
         <nav>
             <div className="nav-container">
-                <a href="https://plantpet.herokuapp.com/" className="Logo"><img src="img/favicon.ico" alt="PlantPet Logo" />PlantPet</a>
+                <Link to="/" className="Logo"><img src="img/favicon.ico" alt="PlantPet Logo" />PlantPet</Link>
             </div>
             <div className="nav-container">
                 {/* mobile hamburger nav */}
@@ -17,24 +18,24 @@ const Header = () => {
                     <div className="nav-hamburger bar2"></div>
                     <div className="nav-hamburger bar3"></div>
                 </div>
-                {/* {props.user.isLoggedIn ? */}
-                {/* // user logged in nav links */}
-                < ul className="nav-links-list isloggedin">
-                    <li><a href="https://plantpet.herokuapp.com/" className="nav-link">Home</a></li>
-                    <li><a href="https://plantpet.herokuapp.com/" className="nav-link">My Plants</a></li>
-                    <li><a href="https://plantpet.herokuapp.com/" className="nav-link">Search</a></li>
-                    <li><a href="https://plantpet.herokuapp.com/" className="solid-btn">Logout</a></li>
-                </ul>
-                {/* :
-                    // not logged in nav links */}
-                <ul className="nav-links-list guest">
-                    <li><a href="https://plantpet.herokuapp.com/" className="nav-link">Features</a></li>
-                    <li><a href="https://plantpet.herokuapp.com/" className="nav-link">Community</a></li>
-                    <li><a href="https://plantpet.herokuapp.com/" className="nav-link">About</a></li>
-                    <li><a href="https://plantpet.herokuapp.com/" className="outline-btn">Login</a></li>
-                    <li><a href="https://plantpet.herokuapp.com/" className="solid-btn">Register</a></li>
-                </ul>
-                {/* } */}
+                {props.isLoggedIn ?
+                    // user logged in nav links
+                    <ul className="nav-links-list isloggedin">
+                        <li><Link to="/dashboard" className="nav-link">Home</Link></li>
+                        <li><Link to="/dashboard" className="nav-link">My Plants</Link></li>
+                        <li><Link to="/dashboard" className="nav-link">Search</Link></li>
+                        <li><Link to="/" className="logout"><button onClick={() => props.setIsLoggedIn(false)} className="solid-btn">Logout</button></Link></li>
+                    </ul>
+                    :
+                    // not logged in nav links
+                    <ul className="nav-links-list guest">
+                        <li><Link to="/" className="nav-link">Features</Link></li>
+                        <li><Link to="/" className="nav-link">Community</Link></li>
+                        <li><Link to="/" className="nav-link">About</Link></li>
+                        <li><Link to="/login" className="outline-btn">Login</Link></li>
+                        <li><Link to="/register" className="solid-btn">Register</Link></li>
+                    </ul>
+                }
             </div>
         </nav >
     )

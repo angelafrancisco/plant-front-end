@@ -15,10 +15,9 @@
 }
 
 .App {
-    background-color: #d1dbb4;
+    background-color: rgb(209, 219, 180);
     min-height: 100vh;
     position: relative;
-    padding-bottom: 300px;
 }
 
 /* LINKS */
@@ -61,6 +60,7 @@ button.outline-btn {
 }
 
 .hero {
+    background-image: url("/public/img/hero.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

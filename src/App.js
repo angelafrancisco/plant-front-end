@@ -1,55 +1,33 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/header';
-import Hero from './components/hero';
-import UserContainer from './components/UserContainer/userContainer';
-import TaskContainer from './components/TaskContainer/taskContainer';
-import PlantContainer from './components/PlantContainer/plantContainer';
+import Home from './components/Home/Home';
+import Dashboard from './components/Dashboard/Dashboard';
+import Register from './components/Home/Register';
+import Login from './components/Home/Login';
 import Footer from './components/footer';
 import './styles/App.css';
 import './styles/header.css';
+import './styles/home.css'
 import './styles/plantBody.css';
 import './styles/footer.css';
 
 function App() {
-  const [requestError, setRequestError] = useState("");
-  const [plants, setPlants] = useState([]);
-  // const [plants, setPlants] = useState([{
-  //   '_id': "1",
-  //   'name': "Cactus",
-  //   'type': "Cactus",
-  //   'image': "https://images.unsplash.com/photo-1519336056116-bc0f1771dec8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
-  //   'potSize': 4,
-  //   'roomName': "Office",
-  //   'direction': "E",
-  //   'userNotes': "",
-  //   'task': { 'completed': false, 'waterSchedule': 7 }
-  // }]);
-
-  useEffect(() => {
-    const getPlants = async () => {
-      try {
-        // const plants = await fetch("http://localhost:3001/plants");
-        const plants = await fetch("https://plantpet-api.herokuapp.com/plants");
-        const parsedPlants = await plants.json();
-        setPlants(parsedPlants.data);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    getPlants()
-  }, []);
-
+  // user backend not complete, useState will act as temporary login
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
-    <div className="App">
-      <Header></Header>
-      <Hero></Hero>
-      <div className="content-wrapper">
-        <UserContainer></UserContainer>
-        <TaskContainer plants={plants} setPlants={setPlants} requestError={requestError}></TaskContainer>
-        <PlantContainer plants={plants} setPlants={setPlants} requestError={requestError}></PlantContainer>
+    <BrowserRouter>
+      <div className="App">
+        <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}></Header>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/register" element={<Register isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+          <Route path="/login" element={<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+        </Routes>
+        <Footer></Footer>
       </div>
-      <Footer></Footer>
-    </div>
+    </BrowserRouter>
   );
 }
 
