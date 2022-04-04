@@ -26,22 +26,28 @@ https://plantpet.herokuapp.com/
 - HTML/CSS/JavaScript
 
 
+## User Stories
+
+- Homepage shows app features and links to login or register an account.
+- User can create a new account and login.
+- User can add plants to their "My Plants" section, creating a name, adding plant type, image url, room name, window direction, and notes about plant.
+- Once a plant is added, user can edit or delete plant.
+- User can complete watering tasks in their "My Tasks" section, as they are auto-generated after creating a new plant.
+
+
 ## Wireframing
 
-- Homepage
+Homepage
 <img src="public/img/PlantPet App Wireframming_Home.png"/>
 
 
-- Login/Register
+Login/Register
 <img src="public/img/PlantPet App Wireframming_register.png"/>
 
 
-- User Home Dashboard
+User Home Dashboard
 <img src="public/img/PlantPet App Wireframming_dashboard.png"/>
 
-<!-- ## User Flowchart -->
-
-<!-- show images here -->
 
 ## GA Project Requirements (MVP)
 
@@ -58,7 +64,7 @@ https://plantpet.herokuapp.com/
 ## Project Stretch Goals
 
 - Wireframing (created via Figma)
-- CSS
+- Custom CSS
 - Favicon/Logo
 - Plant modals (add new plant / edit plant)
 - Form dropdown menu
