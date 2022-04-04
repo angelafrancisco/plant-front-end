@@ -4,14 +4,18 @@
 
 PlantPet - A full-stack MERN web application for the plant obsessed, plant newbies, and aspiring plant parents. Track individual plant watering, add photos, and personalized plant care!
 
+
 ## Deployed Website
 
 Hosted via Heroku:
 
 https://plantpet.herokuapp.com/
 
-## Back-End Repository
-https://github.com/angelafrancisco/plant-back-end
+
+## Repositories
+- Front-End: https://github.com/angelafrancisco/plant-front-end
+- Back-End: https://github.com/angelafrancisco/plant-back-end
+
 
 ## Tech Stack (MERN)
 
@@ -24,11 +28,16 @@ https://github.com/angelafrancisco/plant-back-end
 
 ## Wireframing
 
-Homepage
-<!-- image -->
+- Homepage
+<img src="public/img/PlantPet App Wireframming_Home.png"/>
 
-User Home Dashboard
-<!-- image -->
+
+- Login/Register
+<img src="public/img/PlantPet App Wireframming_register.png"/>
+
+
+- User Home Dashboard
+<img src="public/img/PlantPet App Wireframming_dashboard.png"/>
 
 <!-- ## User Flowchart -->
 
@@ -50,20 +59,33 @@ User Home Dashboard
 
 - Wireframing (created via Figma)
 - CSS
-- React routing
+- Favicon/Logo
+- Plant modals (add new plant / edit plant)
+- Form dropdown menu
+- React routing:
+    - Homepage: `'/'`
+    - Login: `'/login'`
+    - Register: `'/register'`
+    - User Dashboard: `'/dashboard'`
 
 
 ## Future Goals
-These are additions I wasn't able to get to within project timeframe, but want to implement in the future!
+These are additions I wasn't able to get to within project timeframe, but want to implement in the future:
 
+- Responsive Design
+- API: It was difficult to find a public plant API that worked for my project. Hoping to expand on this later on.
 - Model: Plant
     - `petFriendly: { type: Boolean }` (possibly based on toxicity level)
     - `maintenance: { type: "High" | "Medium" | "Low" }` (possibly based on hardiness)
     - `waterSched: { type: Number }` (possibly based on drought/humidity resistance)
-- API: It was difficult to find a public plant API that worked for my project. Hoping to expand on this later on.
+- Finish second CRUD for:
+    - Create new user
+    - User login/logout (username and password authentication on FE)
+    - Update/Delete user account
 - Search functionality for user added plants
 - Upcoming Tasks React component
 - User image upload via Cloudinary
+- Sort plants and tasks by room name or a-z
 
 
 ## Credits
